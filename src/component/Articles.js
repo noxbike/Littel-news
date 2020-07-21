@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 export default class Articles extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
+            items: [], 
+            category: '',
         }
     }
 
@@ -21,11 +22,14 @@ export default class Articles extends Component {
                 <ul>
                     {
                         items.map(item =>
-                            <li key={item.id}>
+                            <li>
+                                <Link to={'/article/' + item.id}>
                                 <p>{item.picture}</p>
                                 <p>{item.title}</p>
                                 <p>{item.body}</p>
                                 <p>{item.category}</p>
+                                <p>{item.createdAt}</p>
+                                </Link>
                             </li>
                     )}
                 </ul>

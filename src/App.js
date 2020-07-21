@@ -4,6 +4,7 @@ import Navbar from './component/Navbar';
 import './App.css';
 import Articles from './component/Articles';
 import Create from './component/Create';
+import Article from './component/Article';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/Technologie' component={Articles} />
           <Route path='/Science' component={Articles} />
           <Route path='/create' component={Create} />
+          <Route path='/article/' component={Article} />
         </div>
       </BrowserRouter>
     </div>
