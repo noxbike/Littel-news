@@ -29,11 +29,11 @@ export default class Articles extends Component {
         }));
     }
 
-    renderArticleByCategory = (categ) => {
+    renderArticles = (categ) => {
         const { items } = this.state;
         return (
             <ul>
-                {items.map(item => (categ ? categ == item.category : true) ?
+                {items.map(item => (categ ? categ === item.category : true) ?
                     <li key={item.id}>
                         <Link to={'/article/' + item.id}>
                             <p>{item.picture}</p>
@@ -53,7 +53,7 @@ export default class Articles extends Component {
         return (
             <div className='news'>
                 {this.props.location.pathname}
-                {this.renderArticleByCategory(category)}
+                {this.renderArticles(category)}
             </div>
         )
     }
