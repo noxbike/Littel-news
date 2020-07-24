@@ -19,9 +19,9 @@ export default class Acticle extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:4000/api/article/${this.extractParams()}`)
+        fetch(`http://localhost:4000/api/article/${ this.extractParams() }`)
         .then(res => res.json())
-        .then(data => this.setState({ item: data.articleFound}));
+        .then(data => this.setState({ item: data.articleFound }));
     }
 
     render() {
@@ -29,16 +29,16 @@ export default class Acticle extends Component {
         return (
             <div>
                 <div className='article'>
-                    <li key={item.id}>
-                        <p>{item.picture}</p>
-                        <p>{item.title}</p>
-                        <p>{item.body}</p>
-                        <p>{item.category}</p>
-                        <p>{item.createdAt}</p>
+                    <li key={ item.id }>
+                        <p>{ item.picture }</p>
+                        <p>{ item.title }</p>
+                        <p>{ item.body }</p>
+                        <p>{ item.category }</p>
+                        <p>{ item.createdAt }</p>
                     </li>
                 </div>
 
-                <Comment id={this.extractParams()}/>
+                <Comment id={ this.extractParams() }/>
             </div>
         )
     }
