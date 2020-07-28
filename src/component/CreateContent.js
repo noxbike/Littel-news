@@ -10,6 +10,7 @@ export default class CreateContent extends Component {
 
     handleChangeContent = event => {
         this.setState({ content: event.target.value });
+        document.getElementById('test-visual').innerHTML = event.target.value;
     }
 
     handlePost = () => {
@@ -28,9 +29,12 @@ export default class CreateContent extends Component {
         return (
             <div>
                 <form className='create-content' onSubmit={ this.handlePost }>
-                    <input type='text' name='content' id='content' onChange={ this.handleChangeContent} />
+                    <textarea type='text' name='content' id='content' cols='80' onChange={ this.handleChangeContent} />
                     <button type='submit'>Envoyer</button>
                 </form>
+                <div id='test-visual'>
+
+                </div>
             </div>
         )
     }
