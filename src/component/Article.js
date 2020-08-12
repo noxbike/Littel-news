@@ -33,21 +33,23 @@ export default class Acticle extends Component {
 
     render() {
         const { item } = this.state;
-        if(item.length !== 0){
+        
+        if(item.length !== 0) {
             return (
                 <div className='content'> 
                     {item.map(item =>
                         <div>
-                            <div id='article' dangerouslySetInnerHTML={this.convertHtml(item.content)}>
-                            </div>
+                            <div id='article' dangerouslySetInnerHTML={ this.convertHtml(item.content) }></div>
                             <Comment id={ this.extractParams() }/>
                         </div>
                     )}
                 </div>
             )
         }
-        else{
-            return( <CreateContent id={ this.extractParams() } /> );
+        else {
+            return( 
+                <CreateContent id={ this.extractParams() } /> 
+            );
         }
         
     }
